@@ -4,7 +4,6 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
-import android.widget.Toast
 import com.kashyap.c0775049_w2020_mad3125_fp.R
 import com.kashyap.c0775049_w2020_mad3125_fp.dataRepo.DataRepo
 import com.kashyap.c0775049_w2020_mad3125_fp.models.customer.Customer
@@ -24,7 +23,7 @@ class AddNewCustomerActivity : AppCompatActivity() {
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
 
-        if (item.itemId == R.id.mnu_save)
+        if (item.itemId == R.id.mnu_add_new_bill)
         {
             if (editTextId.text.toString().isEmpty()){
                 editTextId.error = "Customer ID cannot be empty"

@@ -10,6 +10,8 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.kashyap.c0775049_w2020_mad3125_fp.R
 import com.kashyap.c0775049_w2020_mad3125_fp.adapters.CustomerListAdapter
 import com.kashyap.c0775049_w2020_mad3125_fp.dataRepo.DataRepo
+import com.kashyap.c0775049_w2020_mad3125_fp.models.bill.Internet
+import com.kashyap.c0775049_w2020_mad3125_fp.models.bill.Mobile
 import com.kashyap.c0775049_w2020_mad3125_fp.models.customer.Customer
 import kotlinx.android.synthetic.main.activity_customer_list.*
 import kotlinx.android.synthetic.main.activity_login.*
@@ -26,8 +28,12 @@ class CustomerListActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_customer_list)
 
+        val tempObj = Customer("1","Kashyap","Jhaveri","a@a.com")
 
-        DataRepo.addCustomer(Customer("1","Kashyap","Jhaveri","a@a.com"))
+        tempObj.addBill(Mobile("1","18-Apr-2020","Google","Medium",4.0,100.0))
+
+        DataRepo.addCustomer(tempObj)
+
 
         fillData()
     }

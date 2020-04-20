@@ -11,7 +11,7 @@ object DataRepo {
     }
 
     fun getCustomer(position : Int) : Customer{
-        return customers.get(position)
+        return customers[position]
     }
 
     fun getAllCustomers(): ArrayList<Customer> {

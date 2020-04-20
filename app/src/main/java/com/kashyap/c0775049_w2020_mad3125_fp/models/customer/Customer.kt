@@ -1,6 +1,6 @@
 package com.kashyap.c0775049_w2020_mad3125_fp.models.customer
 
-import com.kashyap.c0775049_w2020_mad3125_fp.models.Bill
+import com.kashyap.c0775049_w2020_mad3125_fp.models.bill.Bill
 import java.text.NumberFormat
 
 class Customer(id : String, firstName : String, lastName : String, emailId : String) {
@@ -17,11 +17,14 @@ class Customer(id : String, firstName : String, lastName : String, emailId : Str
 
     val totalFormattedAmount : String
         get(){
-           return NumberFormat.getInstance().format(this.totalAmount)
+           return NumberFormat.getCurrencyInstance().format(this.totalAmount)
         }
 
 
-    lateinit var bills : HashMap<String,Bill>
+    var bills : ArrayList<Bill> = ArrayList()
 
-
+    fun addBill(bill:Bill){
+        totalAmount += bill.totalAmount
+        bills.add(bill)
+    }
 }
