@@ -16,19 +16,29 @@ import kotlinx.android.synthetic.main.activity_show_bill_details.*
 
 class ShowBillDetailsActivity : AppCompatActivity() {
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_show_bill_details)
-
+    private fun fillData(){
         val seletedCustomer = DataRepo.getCustomer(intent.getIntExtra("selectedCustomer",0))
 
         editTextId.setText(seletedCustomer.id)
         editTextFullName.setText(seletedCustomer.fullName)
         editTextEmail.setText(seletedCustomer.emailId)
+        editTextTotalBill.setText(seletedCustomer.totalFormattedAmount)
 
         val linerLayoutManager = LinearLayoutManager(this@ShowBillDetailsActivity)
         rvBillsList.layoutManager = linerLayoutManager
         rvBillsList.adapter = BillListAdapter(seletedCustomer)
+    }
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_show_bill_details)
+
+        fillData()
+    }
+
+    override fun onRestart() {
+        super.onRestart()
+        fillData()
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {

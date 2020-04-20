@@ -30,7 +30,7 @@ class CustomerListActivity : AppCompatActivity() {
 
         val tempObj = Customer("1","Kashyap","Jhaveri","a@a.com")
 
-        tempObj.addBill(Mobile("1","18-Apr-2020","Google","Medium",4.0,100.0))
+        tempObj.addBill(Mobile("1","Apr 18, 2020","Google","Medium",4.0,100.0))
 
         DataRepo.addCustomer(tempObj)
 

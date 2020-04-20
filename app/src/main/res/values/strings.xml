@@ -20,7 +20,7 @@
     <string name="prompt_bill_id">Bill ID</string>
     <string name="prompt_bill_date">Bill Date</string>
 
-    <!-- TODO: Remove or change this placeholder text -->
+
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="prompt_agency_name">Agency Name</string>
     <string name="prompt_unit_consumed">Unit Consumed</string>
@@ -29,6 +29,7 @@
     <string name="prompt_manufacturer_name">Manufacturer Name</string>
     <string name="prompt_plan_name">Plan Name</string>
     <string name="prompt_minutes_used">Minutes Used</string>
+    <string name="prompt_total_bill">Total Bill</string>
 
 
 </resources>
